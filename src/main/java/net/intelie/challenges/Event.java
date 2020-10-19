@@ -27,7 +27,6 @@ public class Event {
     public int hashCode() {
         int hash = 7;
         hash = 17 * hash + Objects.hashCode(this.type);
-        hash = 17 * hash + (int) (this.timestamp ^ (this.timestamp >>> 32));
         return hash;
     }
 
@@ -42,7 +41,7 @@ public class Event {
         }
 
         final Event other = (Event) obj;
-        return !Objects.equals(this.type, other.type)
-                && this.timestamp != other.timestamp;
+        return Objects.equals(this.type, other.type)
+                && this.timestamp == other.timestamp;
     }
 }
