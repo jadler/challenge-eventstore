@@ -1,10 +1,10 @@
 package net.intelie.challenges;
 
-import org.junit.Test;
-
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
 public class EventTest {
+
     @Test
     public void thisIsAWarning() throws Exception {
         Event event = new Event("some_type", 123L);
