@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * This is just an event stub, feel free to expand it if needed.
  */
-public class Event {
+public class Event implements Comparable<Event> {
 
     private final String type;
     private final long timestamp;
@@ -43,5 +43,10 @@ public class Event {
         final Event other = (Event) obj;
         return Objects.equals(this.type, other.type)
                 && this.timestamp == other.timestamp;
+    }
+
+    @Override
+    public int compareTo(Event other) {
+        return Long.compare(this.timestamp, other.timestamp);
     }
 }
